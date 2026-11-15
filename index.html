@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Arnav Kolluru — University of Washington undergraduate researcher. Research in statistical genomics, computational biology, and machine learning.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Arnav Kolluru | University of Washington</title>
+  <style>
+    :root {
+      --ink: #242b36;
+      --muted: #657080;
+      --link: #215e9c;
+      --line: #e3e7ec;
+      --soft: #f5f8fb;
+      --accent: #e8eff7;
+      --content: 870px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; text-underline-offset: 3px; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid #a5c6e5; outline-offset: 3px; border-radius: 3px; }
+    .shell { max-width: var(--content); padding: 0 28px; margin: 0 auto; }
+    .topbar { border-bottom: 1px solid #eef0f3; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 18px; padding-bottom: 18px; }
+    .brand { color: #3e4958; font-size: 12px; font-weight: 700; letter-spacing: .105em; text-transform: uppercase; white-space: nowrap; }
+    .nav { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 22px; font-size: 12px; }
+    .nav a { color: #657080; }
+    .nav a:hover { color: var(--link); }
+    main { padding-top: 51px; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 34px; align-items: start; }
+    h1 { font-size: clamp(34px, 5vw, 44px); line-height: 1.16; letter-spacing: -.035em; font-weight: 650; color: #202936; margin: 0 0 6px; }
+    .subtitle { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
+    .contact-links { display: flex; align-items: center; flex-wrap: wrap; column-gap: 11px; row-gap: 3px; margin: 0 0 21px; font-size: 13px; }
+    .contact-links .dot { color: #a4aab2; }
+    .hero p { margin: 0 0 12px; }
+    .interests { margin: 5px 0 0; padding-left: 23px; }
+    .interests li { padding: 1px 0; }
+    .portrait-wrap { padding-top: 12px; text-align: center; }
+    .portrait {
+      width: 170px; height: 204px; display: flex; position: relative;
+      align-items: center; justify-content: center;
+      overflow: hidden; margin: 0 auto;
+      border-radius: 5px; border: 1px solid #e1e7ed;
+      background: linear-gradient(152deg, #eef3f9 0%, #dce7f1 100%);
+      color: #637f9e; font-family: Georgia, 'Times New Roman', serif;
+      font-size: 55px; letter-spacing: -.075em;
+    }
+    .portrait::before, .portrait::after {
+      content: ''; display: block; position: absolute; border: 1px solid rgba(111,142,176,.15); border-radius: 50%; width: 210px; height: 210px;
+    }
+    .portrait::before { top: -108px; left: -82px; }
+    .portrait::after { bottom: -128px; right: -74px; }
+    .portrait span { position: relative; z-index: 1; }
+    .location { display: block; margin-top: 8px; color: #9aa3ad; font-size: 11px; letter-spacing: .02em; }
+    .section { margin-top: 42px; }
+    .section h2 {
+      font-size: 20px; font-weight: 650; letter-spacing: -.028em;
+      line-height: 1.35; color: #273342; margin: 0 0 15px; padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      text-transform: lowercase;
+    }
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li { display: grid; grid-template-columns: 93px minmax(0, 1fr); gap: 16px; padding: 4px 0 10px; }
+    .news-date { color: #697588; white-space: nowrap; font-size: 13px; padding-top: 2px; }
+    .section-intro { color: var(--muted); margin: -2px 0 16px; font-size: 14px; }
+    .project { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 19px; padding: 18px 0 20px; border-bottom: 1px solid #eef0f3; }
+    .project:first-of-type { padding-top: 9px; }
+    .project:last-child { border-bottom: 0; }
+    .project h3 { font-size: 15.5px; line-height: 1.36; font-weight: 700; color: #273241; margin: 0 0 4px; }
+    .project .status { color: #667588; font-size: 12.5px; margin-bottom: 6px; }
+    .project p { margin: 0; font-size: 14px; line-height: 1.64; }
+    .visual { width: 160px; height: 117px; border: 1px solid #e5ebf1; border-radius: 3px; overflow: hidden; display: block; }
+    .visual svg { width: 100%; height: 100%; display: block; }
+    .paper-list { margin: 0; padding: 0; list-style: none; }
+    .paper-list li { padding: 9px 0 11px; border-bottom: 1px solid #f0f1f3; }
+    .paper-list li:last-child { border-bottom: none; }
+    .paper-name { font-size: 14.5px; font-weight: 650; color: #333e4b; display: block; line-height: 1.45; }
+    .paper-detail { font-size: 13px; line-height: 1.65; color: #6a7686; display: block; padding-top: 2px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 37px; }
+    .entry { margin-bottom: 18px; }
+    .entry h3 { font-size: 14.5px; font-weight: 690; margin: 0 0 2px; line-height: 1.45; }
+    .entry .position { font-size: 13px; color: #667589; margin: 0 0 3px; }
+    .entry p { font-size: 13.5px; margin: 0; line-height: 1.6; }
+    .honors { padding-left: 20px; margin: 0; }
+    .honors li { margin-bottom: 6px; font-size: 14px; }
+    .skills { font-size: 13.5px; margin: 0; }
+    .skills p { margin: 0 0 9px; }
+    .cv-band { margin-top: 43px; padding: 18px 20px; background: #f6f9fc; border: 1px solid #e8eef5; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .cv-band strong { font-size: 15px; }
+    .cv-band p { margin: 2px 0 0; color: #667386; font-size: 12.5px; }
+    .cv-button { white-space: nowrap; display: inline-block; background: #255e97; color: #fff; font-size: 13px; font-weight: 600; padding: 10px 17px; border-radius: 4px; }
+    .cv-button:hover { color: #fff; background: #194f84; text-decoration: none; }
+    footer { padding: 35px 0 24px; color: #8c95a0; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+    @media(max-width: 680px) {
+      .shell { padding-left: 21px; padding-right: 21px; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; gap: 7px; }
+      .nav { column-gap: 16px; }
+      main { padding-top: 32px; }
+      .hero { grid-template-columns: minmax(0, 1fr) 100px; gap: 17px; }
+      .portrait { width: 100px; height: 122px; font-size: 33px; }
+      .portrait-wrap { padding-top: 2px; }
+      .location { font-size: 10px; }
+      .two-col { grid-template-columns: 1fr; gap: 0; }
+      .project { grid-template-columns: 120px minmax(0, 1fr); gap: 13px; }
+      .visual { width: 120px; height: 103px; }
+      .news-list li { grid-template-columns: 77px minmax(0,1fr); gap: 12px; }
+      .cv-band { align-items: flex-start; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media(max-width: 450px) {
+      body { font-size: 14px; }
+      .hero { display: block; }
+      .portrait-wrap { display: none; }
+      h1 { font-size: 36px; }
+      .project { grid-template-columns: 1fr; padding: 15px 0 20px; }
+      .visual { width: 100%; max-width: 240px; height: 112px; }
+      .cv-band { flex-direction: column; }
+    }
+    @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print { .topbar, .cv-band, .portrait-wrap { display: none; } body { font-size: 12px; } .section { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">Arnav Kolluru</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">about</a>
+        <a href="#research">research</a>
+        <a href="#publications">publications</a>
+        <a href="#experience">experience</a>
+        <a href="#honors">honors</a>
+        <a href="Arnav_Kolluru_CV.pdf" target="_blank" rel="noopener">cv (pdf)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="about" aria-label="Introduction">
+      <div class="hero-copy">
+        <h1>Arnav Kolluru</h1>
+        <p class="subtitle">Undergraduate, Honors Program · University of Washington</p>
+        <div class="contact-links">
+          <a href="mailto:arnav.kolluru23@gmail.com">email</a><span class="dot">·</span>
+          <a href="Arnav_Kolluru_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a><span class="dot">·</span>
+          <span>Seattle, Washington</span>
+        </div>
+        <p>Hello! I am an undergraduate in the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer">University of Washington</a> Honors Program and a Mary Gates Scholar. I am also a Computational Genomics Research Intern in the Department of Biostatistics at the <a href="https://www.uab.edu/" target="_blank" rel="noopener noreferrer">University of Alabama at Birmingham</a>.</p>
+        <p>My research explores how genetic variants influence gene regulation, drawing on post-GWAS analysis, functional genomics resources, and machine-learning models. My work has included projects on physical activity, Parkinson’s disease, and metabolic syndrome.</p>
+        <p>My research interests include:</p>
+        <ul class="interests">
+          <li>Statistical genomics and biostatistics</li>
+          <li>Computational biology and functional genomics</li>
+          <li>Machine learning for genomic interpretation</li>
+        </ul>
+      </div>
+      <aside class="portrait-wrap" aria-label="Profile placeholder">
+        <!-- Optional: replace this monogram with your own portrait after uploading a profile.jpg file. -->
+        <div class="portrait" aria-label="Arnav Kolluru initials"><span>AK</span></div>
+        <span class="location">Seattle, WA</span>
+      </aside>
+    </section>
+
+    <section class="section" id="news" aria-labelledby="news-title">
+      <h2 id="news-title">news</h2>
+      <ul class="news-list">
+        <li><span class="news-date">2026</span><span>Began undergraduate studies in the University of Washington Honors Program as a Mary Gates Scholar.</span></li>
+        <li><span class="news-date">Jun 2026</span><span>Joined the University of Alabama at Birmingham as a Computational Genomics Research Intern.</span></li>
+        <li><span class="news-date">2025</span><span>Received a silver medal at the Genius Olympiad International Science Fair.</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-title">
+      <h2 id="research-title">selected research</h2>
+      <p class="section-intro">Computational genomics research at the University of Alabama at Birmingham.</p>
+
+      <article class="project">
+        <div class="visual" aria-hidden="true">
+          <svg viewBox="0 0 160 117" xmlns="http://www.w3.org/2000/svg">
+            <rect width="160" height="117" fill="#edf3f8"/>
+            <g stroke="#a9c6dd" stroke-width="1.4" fill="none" opacity=".9">
+              <path d="M34 8 C115 34 47 82 131 109"/><path d="M130 8 C48 34 117 82 33 109"/>
+              <path d="M46 17 H117M62 28H102M68 40H96M62 52H102M47 64H117M52 77H111M64 90H100M45 102H119"/>
+            </g>
+            <g fill="#346a9f"><circle cx="34" cy="8" r="3"/><circle cx="130" cy="8" r="3"/><circle cx="67" cy="40" r="3"/><circle cx="95" cy="40" r="3"/><circle cx="47" cy="64" r="3"/><circle cx="117" cy="64" r="3"/><circle cx="33" cy="109" r="3"/><circle cx="131" cy="109" r="3"/></g>
+            <rect x="10" y="88" width="67" height="20" rx="2" fill="#fff" fill-opacity=".94"/><text x="18" y="102" fill="#365773" font-size="11" font-weight="700" font-family="Arial, sans-serif">PA GWAS</text>
+          </svg>
+        </div>
+        <div>
+          <h3>Physical Activity GWAS</h3>
+          <div class="status">First-author manuscript</div>
+          <p>Developed a post-GWAS analysis pipeline that expanded 117 lead variants into 3,599 candidate variants and prioritized 35 potentially functional regulatory variants across 13 loci. Integrated GTEx, ENCODE4, motifbreakR, and AlphaGenome to evaluate regulatory effects, including at MEF2C and PACS1/KLC2.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="visual" aria-hidden="true">
+          <svg viewBox="0 0 160 117" xmlns="http://www.w3.org/2000/svg">
+            <rect width="160" height="117" fill="#eef1f7"/>
+            <g fill="none" stroke="#9eb6d3" stroke-width="1.5">
+              <path d="M29 58 C30 31 56 16 80 19 C102 17 131 36 131 58 C130 79 107 99 80 100 C51 98 30 81 29 58Z"/>
+              <path d="M78 20 C63 36 62 79 80 100M96 20 C103 47 100 77 80 100M29 58 C48 43 105 44 131 58M37 80 C62 63 105 70 120 81"/>
+            </g>
+            <g fill="#4471a1"><circle cx="78" cy="20" r="4"/><circle cx="98" cy="45" r="4"/><circle cx="58" cy="66" r="4"/><circle cx="120" cy="80" r="4"/><circle cx="80" cy="100" r="4"/></g>
+            <rect x="10" y="88" width="66" height="20" rx="2" fill="#fff" fill-opacity=".94"/><text x="18" y="102" fill="#365773" font-size="11" font-weight="700" font-family="Arial, sans-serif">PD GWAS</text>
+          </svg>
+        </div>
+        <div>
+          <h3>Parkinson’s Disease GWAS</h3>
+          <div class="status">Co-first-author manuscript</div>
+          <p>Analyzed 166 GWAS lead variants and 3,755 LD proxies, prioritizing 88 potentially functional variants across 46 loci. Combined brain-specific eQTL evidence, regulatory annotations, and sequence-based predictions to investigate signals involving CTSB, SNCA, GPNMB, and TMEM175.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="visual" aria-hidden="true">
+          <svg viewBox="0 0 160 117" xmlns="http://www.w3.org/2000/svg">
+            <rect width="160" height="117" fill="#eef4f4"/>
+            <g stroke="#b0c9c2" stroke-width="1.2" fill="none">
+              <path d="M27 85L53 38L81 65L107 22L139 55"/><path d="M27 67L53 80L81 35L107 85L139 33"/>
+              <path d="M27 22H139M27 42H139M27 62H139M27 82H139" opacity=".45"/>
+            </g>
+            <g fill="#4b877c"><circle cx="27" cy="85" r="4"/><circle cx="53" cy="38" r="4"/><circle cx="81" cy="65" r="4"/><circle cx="107" cy="22" r="4"/><circle cx="139" cy="55" r="4"/></g>
+            <rect x="10" y="88" width="77" height="20" rx="2" fill="#fff" fill-opacity=".94"/><text x="18" y="102" fill="#3d6862" font-size="11" font-weight="700" font-family="Arial, sans-serif">MetS GWAS</text>
+          </svg>
+        </div>
+        <div>
+          <h3>Metabolic Syndrome GWAS</h3>
+          <div class="status">First-author manuscript</div>
+          <p>Expanded 1,650 lead variants into 50,478 variants and prioritized 698 candidates across 258 loci. Applied Borzoi and AlphaGenome across brain and metabolic tissues, and investigated tissue-sample-size bias using eQTL data, donor matching, and statistical normalization.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <h2 id="publications-title">publications &amp; manuscripts</h2>
+      <ul class="paper-list">
+        <li><span class="paper-name">Post-GWAS Regulatory Annotation of Physical Activity GWAS Loci</span><span class="paper-detail">First-author manuscript · First-author abstract submitted to AHA</span></li>
+        <li><span class="paper-name">Parkinson’s Disease GWAS</span><span class="paper-detail">Co-first-author manuscript</span></li>
+        <li><span class="paper-name">Metabolic Syndrome GWAS</span><span class="paper-detail">First-author manuscript</span></li>
+        <li><span class="paper-name">Impacts of Parents’ Exercise on Inherited Genes</span><span class="paper-detail">iSTEAM Communications Journal · Published</span></li>
+        <li><span class="paper-name">Cardiovascular Screening for Childhood Cancer Survivors</span><span class="paper-detail">Journal of Scientific Research Writing, UMass Amherst · Published</span></li>
+        <li><span class="paper-name">Alzheimer’s and Sleep</span><span class="paper-detail">Research Archive of Rising Scholars · Published</span></li>
+        <li><span class="paper-name">Gut Dysbiosis in Depression</span><span class="paper-detail">Journal of Scientific Research · Accepted 2026</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">experience &amp; service</h2>
+      <div class="two-col">
+        <div>
+          <div class="entry">
+            <h3>ContinueCare LLC</h3>
+            <p class="position">Remote Patient Monitoring Intern · Mar 2025–present</p>
+            <p>Reviewed patient vital-sign data, discussed diet and medication adherence, and supported clinical teams and remote-monitoring workflows.</p>
+          </div>
+          <div class="entry">
+            <h3>COPE Health Scholars</h3>
+            <p class="position">Health Scholar &amp; Training Coordinator · 2024–2026</p>
+            <p>Completed 261+ clinical hours across general medicine, oncology/HIV, and post-surgical settings; helped mentor new scholars.</p>
+          </div>
+          <div class="entry">
+            <h3>Space to Soil</h3>
+            <p class="position">Independent Researcher · Mar 2024–Mar 2026</p>
+            <p>Developed AI-assisted weed detection using NASA imagery, NDVI analysis, and Raspberry Pi-based ground validation.</p>
+          </div>
+        </div>
+        <div>
+          <div class="entry">
+            <h3>International Brain Bee, Olympia Chapter</h3>
+            <p class="position">Founder &amp; President · Mar 2025–present</p>
+            <p>Expanded outreach to 37 schools across southern Washington and helped organize a neuroscience examination and symposium.</p>
+          </div>
+          <div class="entry">
+            <h3>Leadership Initiatives — Nigeria Project</h3>
+            <p class="position">Public Health Ambassador · 2025–2026</p>
+            <p>Developed public-health education briefs and workshop models addressing infectious disease prevention.</p>
+          </div>
+          <div class="entry">
+            <h3>Northwest Nuclear Laboratories</h3>
+            <p class="position">Reactor Technician, Level 2 · 2024–2025</p>
+            <p>Completed radiation-safety training and contributed to experimental work involving boron neutron capture therapy concepts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="honors" aria-labelledby="honors-title">
+      <h2 id="honors-title">selected honors</h2>
+      <ul class="honors">
+        <li>Mary Gates Scholar — University of Washington (2026)</li>
+        <li>Genius Olympiad International Science Fair — Silver Medal (2025)</li>
+        <li>Washington State Science &amp; Engineering Fair — 1st Place and Henrietta Lacks Award (2025)</li>
+        <li>Sigma Xi IFoRE Student Research Award — Top 300 global abstracts (2025)</li>
+        <li>USA Mathematical Olympiad — Qualifier (2025)</li>
+        <li>American Invitational Mathematics Examination — Two-time qualifier (2024, 2025)</li>
+      </ul>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">technical skills</h2>
+      <div class="skills">
+        <p><strong>Computational:</strong> Python (Pandas, NumPy), statistical data analysis, machine learning, data visualization, HTML/CSS, Java.</p>
+        <p><strong>Genomics:</strong> LDlink, RegulomeDB, FORGEdb, rSNPBase, GTEx, ENCODE, JASPAR, motifbreakR, AlphaGenome, Borzoi.</p>
+        <p><strong>Research:</strong> GWAS interpretation, linkage disequilibrium analysis, regulatory annotation, eQTL analysis, scientific writing.</p>
+      </div>
+    </section>
+
+    <aside class="cv-band" aria-label="Curriculum vitae download">
+      <div><strong>Curriculum vitae</strong><p>View the full résumé in PDF format.</p></div>
+      <a class="cv-button" href="Arnav_Kolluru_CV.pdf" target="_blank" rel="noopener">View CV (PDF) ↗</a>
+    </aside>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <span>© 2026 Arnav Kolluru</span>
+      <span><a href="mailto:arnav.kolluru23@gmail.com">Email</a> · <a href="Arnav_Kolluru_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a></span>
+    </div>
+  </footer>
+</body>
+</html>
