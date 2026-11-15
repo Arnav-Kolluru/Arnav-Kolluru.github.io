@@ -123,8 +123,9 @@
     }
     @media(max-width: 450px) {
       body { font-size: 14px; }
-      .hero { display: block; }
-      .portrait-wrap { display: none; }
+      .hero { display: flex; flex-direction: column-reverse; gap: 16px; }
+      .portrait-wrap { display: block; text-align: left; padding-top: 0; }
+      .portrait { width: 108px; height: 130px; margin: 0; }
       h1 { font-size: 36px; }
       .project { grid-template-columns: 1fr; padding: 15px 0 20px; }
       .visual { width: 100%; max-width: 240px; height: 112px; }
@@ -169,8 +170,8 @@
         </ul>
       </div>
       <aside class="portrait-wrap" aria-label="Profile placeholder">
-        <!-- Optional: replace this monogram with your own portrait after uploading a profile.jpg file. -->
-        <img class="portrait" src="AK.jpg" alt="Arnav Kolluru" style="object-fit: cover;">
+        <!-- Profile photo is stored as AK.jpg in the repository root. -->
+        <img class="portrait" src="AK.jpg?v=2" alt="Arnav Kolluru" style="object-fit: cover;">
         <span class="location">Seattle, WA</span>
       </aside>
     </section>
