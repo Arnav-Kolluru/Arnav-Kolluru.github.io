@@ -41,6 +41,11 @@
     .nav a:hover { color: var(--link); }
     main { padding-top: 51px; }
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 34px; align-items: start; }
+    .hero-copy { min-width: 0; }
+    .hero-copy p { overflow-wrap: break-word; }
+    .nav { justify-content: flex-end; }
+    .portrait { object-fit: cover; object-position: center top; }
+    .section { scroll-margin-top: 22px; }
     h1 { font-size: clamp(34px, 5vw, 44px); line-height: 1.16; letter-spacing: -.035em; font-weight: 650; color: #202936; margin: 0 0 6px; }
     .subtitle { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
     .contact-links { display: flex; align-items: center; flex-wrap: wrap; column-gap: 11px; row-gap: 3px; margin: 0 0 21px; font-size: 13px; }
@@ -108,7 +113,7 @@
     @media(max-width: 680px) {
       .shell { padding-left: 21px; padding-right: 21px; }
       .topbar-inner { flex-direction: column; align-items: flex-start; gap: 7px; }
-      .nav { column-gap: 16px; }
+      .nav { column-gap: 16px; justify-content: flex-start; }
       main { padding-top: 32px; }
       .hero { grid-template-columns: minmax(0, 1fr) 100px; gap: 17px; }
       .portrait { width: 100px; height: 122px; font-size: 33px; }
@@ -155,7 +160,9 @@
       <div class="hero-copy">
         <h1>Arnav Kolluru</h1>
         <p class="subtitle">Undergraduate, Honors Program · University of Washington</p>
-        <span>arnav.kolluru23@gmail.com </span><span class="dot">·</span>
+        <div class="contact-links">
+          <a href="mailto:arnav.kolluru23@gmail.com">arnav.kolluru23@gmail.com</a>
+          <span class="dot" aria-hidden="true">·</span>
           <span>Seattle, Washington</span>
         </div>
         <p>Hello! I am an undergraduate in the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer">University of Washington</a> Honors Program and a Mary Gates Scholar. I am also a Computational Genomics Research Intern in the Department of Biostatistics at the <a href="https://www.uab.edu/" target="_blank" rel="noopener noreferrer">University of Alabama at Birmingham</a>.</p>
